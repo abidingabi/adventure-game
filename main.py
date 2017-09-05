@@ -1,6 +1,7 @@
 import os
 
-inventoryPath = '.\inventory.txt'
+inventoryPath = '.\\inventory.txt'
+invStructure = 'Slot0:\nSlot1:\nSlot2:\nSlot3:\nSlot4:\nSlot5:\nSlot6:\nSlot7:\nSlot8:\nSlot9:'
 
 def readInv(file): #reads what is contained in inventory
     with open(file, 'r') as f:
@@ -17,14 +18,13 @@ def writeInv(slot, item, file):
     with open(file, 'w') as f:
         f.writelines(content)
 def writeInvStructure(file):
-    for i in range(0,9):
-        writeInv(i, '', inventoryPath)
-
+    with open(inventoryPath, 'w') as text_file:
+        text_file.write(invStructure)
 try:
     if (os.path.getsize(inventoryPath) != 0): #If inventory.txt is not empty
         currentInventory = readInv(inventoryPath)
     else: #If inventory.txt is empty
         writeInvStructure(inventoryPath)
-except IOError: #If inventory.txt does not exist
-    with open(inventoryPath,"a+") as file:
-        writeInvStructure(file) #Create inventory file and create inventory structure
+except WindowsError: #If inventory.txt does not exist
+    with open(inventoryPath,'a+') as file:
+        writeInvStructure(file) #Creates inventory file and creates inventory structure
