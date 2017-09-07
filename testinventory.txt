@@ -1,0 +1,10 @@
+Slot0:item
+Slot1:item
+Slot2:item
+Slot3:item
+Slot4:item
+Slot5:item
+Slot6:item
+Slot7:item
+Slot8:item
+Slot9:item
