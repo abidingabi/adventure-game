@@ -1,6 +1,7 @@
 
 import unittest
 from main import *
+from inventory import *
 
 testInventoryPath = '.\\testinventory.txt'
 
@@ -18,6 +19,7 @@ class GameTest(unittest.TestCase):
         slot = 0
         for slot in xrange(10):
             writeInv(slot, 'item', testInventoryPath)
+        print readInv(testInventoryPath)
         self.assertEqual(['item']*10, readInv(testInventoryPath), 'Inventory Read and Writing')
 
 resetInventory(testInventoryPath)
