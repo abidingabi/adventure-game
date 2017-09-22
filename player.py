@@ -17,3 +17,6 @@ class Player:
         except WindowsError: #If inventory.txt does not exist
             with open(filePath,'a+') as file:
                 writeInvStructure(file) #Creates inventory file and creates inventory structure
+    def kill(self):
+        writeInvStructure(filePath)
+        self.inventory = ['']*10
