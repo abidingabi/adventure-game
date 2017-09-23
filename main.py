@@ -1,9 +1,9 @@
 from inventory import *
-import os
-
-from inventory import *
 from player import *
+from levels import *
+
+import os
 
 activePlayer=Player(inventoryPath)
 
-print activePlayer.inventory
+print showLevel(0)
