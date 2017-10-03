@@ -1,0 +1,4 @@
+#Ignore compile python files
+*.log
+#Ignore IDE things
+run.txt
